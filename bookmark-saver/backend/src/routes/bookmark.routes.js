@@ -5,6 +5,8 @@ const bookmarkRouter = express.Router();
 
 bookmarkRouter.post("/create", bookmarkController.createBookmark);
 
-bookmarkRouter.get("/fetch/bookmarks", bookmarkController.fetchBookmarks);
+bookmarkRouter.get("/fetch", bookmarkController.fetchBookmarks);
+
+bookmarkRouter.delete("/delete/:id", bookmarkController.deleteBookmark);
 
 module.exports = bookmarkRouter;

@@ -20,9 +20,43 @@ async function createBookmark(req, res) {
   });
 }
 
-async function fetchBookmarks(req, res) {}
+async function fetchBookmarks(req, res) {
+  const bookmarks = await bookmarkModel.find();
+
+  if (!bookmarks) {
+    return res.status(404).json({
+      message: "Bookmarks are empty",
+    });
+  }
+
+  res.status(200).json({
+    message: "Bookmarks fetched successfully",
+    bookmarks,
+  });
+}
+
+async function deleteBookmark(req, res) {
+  const deleteId = req.params.id;
+
+  const bookmark = await bookmarkModel.findById({
+    _id: deleteId,
+  });
+
+  if (!bookmark) {
+    return res.status(404).json({
+      message: "bookmark doesn't exist",
+    });
+  }
+
+  await bookmark.deleteOne();
+
+  res.status(200).json({
+    message: "Delete successful",
+  });
+}
 
 module.exports = {
   createBookmark,
   fetchBookmarks,
+  deleteBookmark,
 };
