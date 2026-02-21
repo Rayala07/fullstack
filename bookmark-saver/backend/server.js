@@ -1,0 +1,8 @@
+const app = require("./src/app");
+const connectToDB = require("./config/database");
+
+connectToDB();
+
+app.listen(3000, () => {
+  console.log("Server running on PORT-3000");
+});
