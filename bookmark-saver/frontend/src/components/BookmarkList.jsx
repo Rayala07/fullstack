@@ -5,25 +5,24 @@ const BookmarkList = () => {
 
     const [bookmarks, setBookmarks] = useState([])
 
-
     useEffect(() => {
-        async function getBookmarks() {
+    async function getBookmarks() {
         const response = await axios.get("http://localhost:3000/api/bookmarks/fetch")
 
         setBookmarks(response.data.bookmarks)
-
         console.log(bookmarks)
     }
         getBookmarks()
-    }, [bookmarks])
+    }, [setBookmarks])
 
   return (
     <div className="bm-card">
-      {bookmarks.map((bm) => {
+      {bookmarks.map((bm, index) => {
         return (
-        <div>
+        <div key={index} className="bm-card">
             <p>{bm.title}</p>
             <p>{bm.link}</p>
+            <button className="delete-btn">X</button>
         </div>
         )
       })}

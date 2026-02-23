@@ -43,3 +43,58 @@ html,
 .bm-card {
   color: white;
 }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.772);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background: rgb(20, 27, 52);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bm-input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.submit-btn {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rgba(23, 32, 52, 0.929);
+  color: whitesmoke;
+}
+
+.bm-card {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rgba(10, 14, 23, 0.413);
+}
+
+.delete-btn {
+  display: flex;
+}
