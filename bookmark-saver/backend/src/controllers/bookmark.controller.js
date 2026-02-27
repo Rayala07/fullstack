@@ -52,6 +52,7 @@ async function deleteBookmark(req, res) {
 
   res.status(200).json({
     message: "Delete successful",
+    bookmark,
   });
 }
 

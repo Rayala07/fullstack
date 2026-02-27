@@ -13,7 +13,7 @@ const BookmarkList = () => {
         console.log(bookmarks)
     }
         getBookmarks()
-    }, [setBookmarks])
+    }, [])
 
   return (
     <div className="bm-card">
